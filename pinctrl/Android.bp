@@ -1,0 +1,27 @@
+//
+// Copyright (C) 2023 KonstaKANG
+//
+// SPDX-License-Identifier: BSD-3-Clause
+//
+
+cc_binary {
+    name: "pinctrl",
+    vendor: true,
+    srcs: [
+        "gpiochip_bcm2712.c",
+        "gpiochip_bcm2835.c",
+        "gpiochip_rp1.c",
+        "gpiolib.c",
+        "pinctrl.c",
+        "util.c",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+    ],
+    // Needed for __start_gpiochips / __stop_gpiochips
+    // See https://lld.llvm.org/ELF/start-stop-gc
+    ldflags: ["-z nostart-stop-gc"],
+}

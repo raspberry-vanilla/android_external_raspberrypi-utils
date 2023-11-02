@@ -1,0 +1,23 @@
+//
+// Copyright (C) 2023 KonstaKANG
+//
+// SPDX-License-Identifier: (GPL-2.0-or-later OR BSD-2-Clause)
+//
+
+cc_library {
+    name: "libfdt-rpi",
+    vendor: true,
+    export_include_dirs: ["."],
+    srcs: [
+        "fdt.c",
+        "fdt_addresses.c",
+        "fdt_check.c",
+        "fdt_empty_tree.c",
+        "fdt_overlay.c",
+        "fdt_ro.c",
+        "fdt_rw.c",
+        "fdt_strerror.c",
+        "fdt_sw.c",
+        "fdt_wip.c",
+    ],
+}

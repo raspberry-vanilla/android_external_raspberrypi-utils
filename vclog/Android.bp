@@ -1,0 +1,17 @@
+//
+// Copyright (C) 2023 KonstaKANG
+//
+// SPDX-License-Identifier: BSD-3-Clause
+//
+
+cc_binary {
+    name: "vclog",
+    vendor: true,
+    srcs: ["vclog.c"],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+    ],
+}

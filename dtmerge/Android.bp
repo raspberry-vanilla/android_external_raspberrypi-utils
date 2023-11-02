@@ -1,0 +1,41 @@
+//
+// Copyright (C) 2023 KonstaKANG
+//
+// SPDX-License-Identifier: BSD-3-Clause
+//
+
+cc_defaults {
+    name: "dtmerge_defaults",
+    vendor: true,
+    shared_libs: ["libfdt-rpi"],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}
+
+cc_library_static {
+    name: "libdtoverlay",
+    srcs: ["dtoverlay.c"],
+    defaults: ["dtmerge_defaults"],
+}
+
+cc_binary {
+    name: "dtmerge",
+    srcs: ["dtmerge.c"],
+    static_libs: ["libdtoverlay"],
+    defaults: ["dtmerge_defaults"],
+}
+
+cc_binary {
+    name: "dtoverlay",
+    symlinks: ["dtparam"],
+    srcs: [
+        "dtoverlay_main.c",
+        "utils.c",
+    ],
+    static_libs: ["libdtoverlay"],
+    required: ["dtc-rpi"],
+    defaults: ["dtmerge_defaults"],
+}

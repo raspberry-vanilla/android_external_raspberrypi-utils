@@ -1,0 +1,11 @@
+//
+// Copyright (C) 2023 KonstaKANG
+//
+// SPDX-License-Identifier: BSD-3-Clause
+//
+
+cc_binary {
+    name: "vcgencmd",
+    vendor: true,
+    srcs: ["vcgencmd.c"],
+}
