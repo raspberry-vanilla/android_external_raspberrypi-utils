@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.1...3.27)
 project(utils)
 
 # List of subsidiary CMakeLists
+add_subdirectory(dtc)
 add_subdirectory(dtmerge)
 add_subdirectory(otpset)
 add_subdirectory(overlaycheck)
