@@ -43,7 +43,7 @@ modification, are permitted provided that the following conditions are met:
 #define CFG_DIR_1 "/sys/kernel/config"
 #define CFG_DIR_2 "/config"
 #define DT_SUBDIR "/device-tree"
-#define WORK_DIR "/tmp/.dtoverlays"
+#define WORK_DIR "/data/cache"
 #define OVERLAY_SRC_SUBDIR "overlays"
 #define README_FILE "README"
 #define DT_OVERLAYS_SUBDIR "overlays"
@@ -616,7 +616,7 @@ static int dtoverlay_add(STATE_T *state, const char *overlay,
     {
         /* Convert /proc/device-tree to a .dtb and load it */
         overlay_file = sprintf_dup("%s/%s", work_dir, "base.dtb");
-        if (run_cmd("dtc -I fs -O dtb -o '%s' /proc/device-tree 1>/dev/null 2>&1",
+        if (run_cmd("dtc-rpi -I fs -O dtb -o '%s' /proc/device-tree 1>/dev/null 2>&1",
                     overlay_file) != 0)
             return error("Failed to read active DTB");
     }
