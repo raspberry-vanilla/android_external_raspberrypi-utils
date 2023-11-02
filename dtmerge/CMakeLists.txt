@@ -11,6 +11,8 @@ if (CMAKE_COMPILER_IS_GNUCC)
    add_definitions (-ffunction-sections)
 endif ()
 
+include_directories(../dtc/libfdt)
+
 add_library (dtovl ${STATIC} dtoverlay.c)
 target_link_libraries(dtovl fdt)
 
