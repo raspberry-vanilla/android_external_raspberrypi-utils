@@ -1,0 +1,35 @@
+//
+// Copyright (C) 2025 KonstaKANG
+//
+// SPDX-License-Identifier: BSD-3-Clause
+//
+
+cc_library_static {
+    name: "libgpiolib",
+    srcs: [
+        "gpiochip_bcm2712.c",
+        "gpiochip_bcm2835.c",
+        "gpiochip_rp1.c",
+        "gpiolib.c",
+        "library_gpiochips.c",
+        "util.c",
+    ],
+    cflags: [
+        "-DLIBRARY_BUILD=1",
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-pedantic",
+    ],
+}
+
+cc_binary {
+    name: "pinctrl",
+    vendor: true,
+    srcs: [
+        "pinctrl.c",
+    ],
+    static_libs: [
+        "libgpiolib",
+    ],
+}
