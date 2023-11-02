@@ -119,8 +119,8 @@ int32_t main(int32_t argc, char *argv[])
     uint32_t logs_size = 0;
     char *payload_buffer = NULL;
     uint32_t payload_buffer_size = 0;
-    uint32_t log_id;
-    uint32_t log_addr;
+    uint32_t log_id = 0;
+    uint32_t log_addr = 0;
     uint32_t log_size;
     char *log_buffer;
     log_toc_t toc;
