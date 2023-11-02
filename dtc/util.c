@@ -21,7 +21,7 @@
 
 #include "libfdt.h"
 #include "util.h"
-#include "version_gen.h"
+#include "version_no_gen.h"
 
 char *xstrdup(const char *s)
 {
