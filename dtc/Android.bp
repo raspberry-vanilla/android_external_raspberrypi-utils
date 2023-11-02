@@ -1,0 +1,35 @@
+//
+// Copyright (C) 2025 KonstaKANG
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+
+cc_binary {
+    name: "dtc-rpi",
+    vendor: true,
+    srcs: [
+        "checks.c",
+        "data.c",
+        "dtc-lexer.l",
+        "dtc-parser.y",
+        "dtc.c",
+        "flattree.c",
+        "fstree.c",
+        "livetree.c",
+        "srcpos.c",
+        "treesource.c",
+        "util.c",
+    ],
+    shared_libs: [
+        "libfdt-rpi",
+    ],
+    cflags: [
+        "-DNO_YAML",
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-Wno-missing-field-initializers",
+        "-Wno-sign-compare",
+        "-Wno-unused-parameter",
+    ],
+}
