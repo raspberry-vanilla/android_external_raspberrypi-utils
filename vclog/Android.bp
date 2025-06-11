@@ -14,6 +14,5 @@ cc_binary {
         "-Wall",
         "-Werror",
         "-Wextra",
-        "-pedantic",
     ],
 }
